@@ -36,6 +36,7 @@ jobs:
           testFormat: "junit"
           testPaths: "results/junit-report.xml"
           projectKey: "XRAY"
+          testExecKey: "XRAY-37"
 
       - name: Subir reporte como artefacto
         uses: actions/upload-artifact@v4
