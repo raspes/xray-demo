@@ -35,8 +35,7 @@ jobs:
           password: ${{ secrets.XRAY_CLIENT_SECRET }}
           testFormat: "junit"
           testPaths: "results/junit-report.xml"
-          projectKey: "XRAY"
-          testExecKey: "XRAY-37"
+          projectKey: "SHOP"
 
       - name: Subir reporte como artefacto
         uses: actions/upload-artifact@v4
