@@ -37,6 +37,7 @@ jobs:
           testPaths: "results/junit-report.xml"
           projectKey: "SHOP"
           xrayBaseUrl: "https://xray.cloud.getxray.app"
+          testExecKey: "SHOP-63"
 
       - name: Subir reporte como artefacto
         uses: actions/upload-artifact@v4
