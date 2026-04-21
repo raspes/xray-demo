@@ -36,6 +36,7 @@ jobs:
           testFormat: "junit"
           testPaths: "results/junit-report.xml"
           projectKey: "SHOP"
+          xrayCloudBaseUrl: "https://xray.cloud.atlassian.com"
 
       - name: Subir reporte como artefacto
         uses: actions/upload-artifact@v4
