@@ -1,30 +1,32 @@
-import { test, expect } from '@playwright/test';
+import { test, expect } from "@playwright/test";
 
-test.describe('Demo Suite — Xray CI/CD Integration', () => {
-
-  test('[SHOP-59] Home page loads correctly', async ({ page }) => {
-    await page.goto('https://playwright.dev/');
+test.describe("Demo Suite — Xray CI/CD Integration", () => {
+  test("Home page loads correctly", async ({ page }) => {
+    await page.goto("https://playwright.dev/");
     await expect(page).toHaveTitle(/Playwright/);
-    await expect(page.locator('text=Get started')).toBeVisible();
+    await expect(page.locator("text=Get started")).toBeVisible();
   });
 
-  test('[SHOP-60] Get Started button navigates to documentation', async ({ page }) => {
-    await page.goto('https://playwright.dev/');
-    await page.locator('text=Get started').first().click();
+  test("Get Started button navigates to documentation", async ({ page }) => {
+    await page.goto("https://playwright.dev/");
+    await page.locator("text=Get started").first().click();
     await expect(page).toHaveURL(/.*intro/);
   });
 
-  test('[SHOP-61] Search bar is available', async ({ page }) => {
-    await page.goto('https://playwright.dev/');
-    await page.waitForLoadState('networkidle');
-    const searchButton = page.getByRole('button', { name: /search/i });
+  test("Search bar is available", async ({ page }) => {
+    await page.goto("https://playwright.dev/");
+    await page.waitForLoadState("networkidle");
+    const searchButton = page.getByRole("button", { name: /search/i });
     await expect(searchButton).toBeVisible();
   });
 
-  test('[SHOP-62] INTENTIONAL FAILURE — Incorrect title to demonstrate failure', async ({ page }) => {
-    await page.goto('https://playwright.dev/');
+  test("INTENTIONAL FAILURE — Incorrect title to demonstrate failure", async ({
+    page,
+  }) => {
+    await page.goto("https://playwright.dev/");
     // This test fails on purpose — to show FAILED with evidence in Xray
-    await expect(page).toHaveTitle('This title does not exist', { timeout: 5000 });
+    await expect(page).toHaveTitle("This title does not exist", {
+      timeout: 5000,
+    });
   });
-
 });
